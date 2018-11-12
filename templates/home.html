@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+
+	<ul>
+		<li>
+			<a href="{% url 'simple_upload' %}">Simple Upload</a>
+		</li>
+		<li>
+			<a href="{% url 'model_form_upload' %}">Model Form Upload</a>
+		</li>
+	</ul>
+
+
+	{% if uploaded_file_url %}
+		<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+	{% endif %}
+
+	<p><a href="{% url 'logout' %}">logout</a></p>
+
+	{% else %}
+		<p>You are not logged in</p>
+		<a href="{% url 'login' %}">login</a>
+		<p>Create a new account</p>
+		<a href="{% url 'signup' %}">Sign Up</a>
+	{% endif %}
+{% endblock %}
+
+
