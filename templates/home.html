@@ -9,11 +9,11 @@
 
 	<ul>
 		<li>
-			<a href="{% url 'simple_upload' %}">Simple Upload</a>
+			<a href="{% url 'simple_upload' %}">Upload Image</a>
 		</li>
-		<li>
+		<!-- <li>
 			<a href="{% url 'model_form_upload' %}">Model Form Upload</a>
-		</li>
+		</li> -->
 	</ul>
 
 
@@ -21,11 +21,11 @@
 		<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
 	{% endif %}
 
-	<p><a href="{% url 'logout' %}">logout</a></p>
+	<p><a href="{% url 'logout' %}">Logout</a></p>
 
 	{% else %}
 		<p>You are not logged in</p>
-		<a href="{% url 'login' %}">login</a>
+		<a href="{% url 'login' %}">Login</a>
 		<p>Create a new account</p>
 		<a href="{% url 'signup' %}">Sign Up</a>
 	{% endif %}
